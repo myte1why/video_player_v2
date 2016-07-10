@@ -308,8 +308,6 @@ video {
       background-image: url("../icons/fullscreen-icon.png");
       transform: scale(3);
       margin: 0 10px; }
-    #player_container #controls #cc {
-      font-size: 1.5em; }
 
 .sets {
   margin: 0;

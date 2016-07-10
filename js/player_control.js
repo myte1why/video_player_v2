@@ -7,7 +7,6 @@ var volumeBar = document.getElementById("volume");
 var full_screen = document.getElementById('full_screen');
 var currentTimeDisplay = document.getElementById('current');
 var totalVideoTime = document.getElementById('lenght');
-var Cc = getElementById('cc');
 
 function playPause(){
 
@@ -122,11 +121,11 @@ function time(){
     } else {
             highlight(null);
             if (video.currentTime === video.duration) {
-        video.currentTime = 0;
-        video.pause();
-        playpause.classList.remove('pause');
-        playpause.classList.add('play');
-    }; 
+                  video.currentTime = 0;
+                  video.pause();
+                  playpause.classList.remove('pause');
+                  playpause.classList.add('play');
+                } 
     }
 
 }

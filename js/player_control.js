@@ -84,6 +84,7 @@ function time(){
   totalVideoTime.innerHTML = durmins+":"+dursecs;
   currentTimeDisplay.innerHTML = curmins+":"+cursecs;
 
+
   var time = video.currentTime.toFixed(2); 
    if (time >= 0.18 && time < 4.13) {
             highlight('#1'); 
@@ -118,8 +119,15 @@ function time(){
     } else if (time >= 57.78 && time < 59.00) {
             highlight('#16');    
     } else {
-            highlight(null); 
+            highlight(null);
+            if (video.currentTime === video.duration) {
+        video.currentTime = 0;
+        video.pause();
+        playpause.classList.remove('pause');
+        playpause.classList.add('play');
+    }; 
     }
+
 }
 video.ontimeupdate =time;
 playpause.onclick = playPause;

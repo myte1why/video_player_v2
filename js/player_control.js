@@ -7,6 +7,7 @@ var volumeBar = document.getElementById("volume");
 var full_screen = document.getElementById('full_screen');
 var currentTimeDisplay = document.getElementById('current');
 var totalVideoTime = document.getElementById('lenght');
+var Cc = getElementById('cc');
 
 function playPause(){
 
@@ -129,6 +130,9 @@ function time(){
     }
 
 }
+
+
+
 video.ontimeupdate =time;
 playpause.onclick = playPause;
 sound.onclick = soundOnOff;

@@ -42,7 +42,7 @@ background-color: rgba(10, 10, 10, 0.1);
 		display: none;
 	    flex-direction: row;
 	    justify-content: space-between;
-	    align-items: center;
+	    align-items: baseline;
 	    height: 50px;
 	    width: 100%;
 	    padding: 1% 5%;
@@ -72,12 +72,12 @@ background-color: rgba(10, 10, 10, 0.1);
 		.sound-on{
 			background-image: url("../icons/volume-on-icon.png");
 		    transform: scale(3);
-		    margin-right: 10px;
+		    margin: 0 10px;
 		}
 		.sound-off{
 			background-image: url("../icons/volume-off-icon.png");
 		    transform: scale(3);
-		    margin-right: 10px;
+		    margin: 0 10px;
 		}
 		#volume{
 			    flex-basis: 10%;
@@ -86,8 +86,16 @@ background-color: rgba(10, 10, 10, 0.1);
 		    margin-right: 0;
 		    background-image: url("../icons/fullscreen-icon.png");
 		    transform: scale(3);
-		    margin-left: 10px;
+		    margin: 0 10px;
+		}
+		#cc{
+			    font-size: 1.5em;
 		}
 
 	}
+}
+.sets{
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
 }

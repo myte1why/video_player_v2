@@ -216,19 +216,24 @@ ul {
 
 .video_container {
   width: 100%;
-  max-height: 65vh;
+  max-height: 100vh;
   padding: 0;
   margin: 0; }
+  @media (min-width: 1024px) {
+    .video_container {
+      height: 500px;
+      width: 889px;
+      margin: 0 auto; } }
 
 .captions {
   width: 90vw;
   margin: 2vh auto; }
   @media (min-width: 767px) {
     .captions {
-      width: 80vw; } }
-  @media (min-width: 1440px) {
+      width: 75vw; } }
+  @media (min-width: 1024px) {
     .captions {
-      width: 60vw; } }
+      width: 650px; } }
 
 .highlight {
   color: red; }
@@ -241,40 +246,26 @@ video {
   padding: 0; }
   @media (min-width: 767px) {
     video {
-      height: 63vh; } }
-  @media (min-width: 1440px) {
+      height: auto; } }
+  @media (min-width: 1024px) {
     video {
-      height: 62.4vh; } }
+      height: 500px;
+      width: 889px; } }
 
 #player_container {
-  position: relative;
-  bottom: 30px;
+  bottom: 42px;
   height: 25px;
   width: 100%;
   background-color: rgba(10, 10, 10, 0.1); }
-  @media (min-width: 1024px) {
-    #player_container {
-      width: 74.9%;
-      margin: 0 auto; } }
-  @media (min-width: 1440px) {
-    #player_container {
-      width: 62%;
-      margin: 0 auto; } }
   #player_container #progress {
     z-index: 1000;
     position: relative;
     width: 100%;
     height: 5px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    bottom: 10px; }
   #player_container #controls {
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    height: 50px;
-    width: 100%;
-    padding: 1% 5%;
-    background: rgba(0, 0, 0, 0.32); }
+    display: none; }
     #player_container #controls button {
       flex-basis: 5%;
       height: 30px;
@@ -287,12 +278,11 @@ video {
     #player_container #controls .play {
       background-image: url("../icons/play-icon.png");
       margin-left: 0; }
+      @media (min-width: 1024px) {
+        #player_container #controls .play {
+          transform: scale(0.5); } }
     #player_container #controls .pause {
       background-image: url("../icons/pause-icon.png"); }
-    #player_container #controls #progress {
-      flex-basis: 45%;
-      color: #333;
-      vertical-align: middle; }
     #player_container #controls .sound-on {
       background-image: url("../icons/volume-on-icon.png");
       transform: scale(3);
@@ -313,5 +303,50 @@ video {
   margin: 0;
   padding: 0;
   line-height: 1em; }
+
+.no_display {
+  display: none; }
+
+.display {
+  bottom: 25px;
+  z-index: 1000;
+  text-align: center;
+  position: absolute;
+  width: 100%; }
+
+.playerBG {
+  width: 75%;
+  background: rgba(0, 0, 0, 0.63);
+  margin: 0 auto 5px;
+  border-radius: .75em;
+  line-height: 1.7;
+  font-size: 1.1em;
+  color: whitesmoke; }
+
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure {
+  display: none !important; }
+
+.normal {
+  bottom: 42px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 50px;
+  widows: 100%;
+  background: rgba(0, 0, 0, 0.32);
+  color: white; }
+
+.fullscreen {
+  background-color: rgba(10, 10, 10, 0.1);
+  z-index: 1000000000000000;
+  margin: 0;
+  left: 0; }
+
+.relative {
+  position: relative; }
+
+.absolute {
+  position: absolute; }
 
 /*# sourceMappingURL=main.css.map */

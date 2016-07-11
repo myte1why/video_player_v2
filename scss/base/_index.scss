@@ -14,8 +14,7 @@ $stack-helvetica	:'Helvetica Neue',$stack-sans-serif;
 // Media query breakpoints
 
 $tablet-width: 767px;
-$laptop-width:1024px;
-$desktop-width: 1440px;
+$desktop-width: 1024px;
 
 //font size
 
@@ -35,11 +34,6 @@ $line-height	: 1.5;
 
 @mixin tablet {
   @media (min-width: #{$tablet-width})  {
-    @content;
-  }
-}
-@mixin laptop {
-  @media (min-width: #{$laptop-width}) {
     @content;
   }
 }
@@ -64,18 +58,23 @@ $line-height	: 1.5;
 }
 .video_container{
 	width: 100%;
-	max-height: 65vh;
+	max-height: 100vh;
 	padding: 0;
 	margin: 0;
+	@include desktop{
+	    height: 500px;
+    	width: 889px;
+    	margin: 0 auto;
+	}
 }
 .captions{
 	width: 90vw;
 	margin: 2vh auto;
 	@include tablet{
-		width: 80vw;
+		width: 75vw;
 	}
 	@include desktop{
-		width: 60vw;
+    width: 650px;
 	}
 }
 .highlight{

@@ -46,21 +46,31 @@ $('.video_container').hover(function(){
         $('#player_container').css("bottom", "42px");
     });
 full_screen.addEventListener("click", function() {
-  if (video.requestFullscreen) {
-    video.requestFullscreen();
+  if(!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            if(video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if(video.mozRequestFullScreen) {
+               video.mozRequestFullScreen();
+            } else if(video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if(video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
         player_container.classList.add('absolute'); 
         player_container.classList.add('fullscreen'); 
-  } else if (video.mozRequestFullScreen) {
-    video.mozRequestFullScreen();
-        player_container.classList.add('absolute');
-        player_container.classList.add('fullscreen');  // Firefox 
-  } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen();
-        player_container.classList.add('absolute');
-        player_container.classList.add('fullscreen');  // Chrome and Safari
-  }else if (video.fullscreenElement && video.fullscreenElement.nodeName == 'video') {
-    console.log('Your video is playing in fullscreen');
-  }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        player_container.classList.remove('absolute'); 
+        player_container.classList.remove('fullscreen'); 
+        }
 });
 
 progress.addEventListener("change", function() {
